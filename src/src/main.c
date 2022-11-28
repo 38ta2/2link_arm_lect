@@ -26,7 +26,7 @@ int main()
         return 0;
 
     // 運動学ライブラリの初期化
-    initParam();
+    // initParam();
 
     // サーボ関連の設定の初期化
     /// if (initilizeCranex7(operating_mode))
@@ -50,11 +50,12 @@ int main()
         setCranex7Angle(target_theta);
 
         sleep(3);
-
+        double present_theta[JOINT_NUM] = target_theta[JOINT_NUM]; //現在角度を格納する変数
+        double present_current[JOINT_NUM] = 1.7;                   //現在トルクを格納する変数
         getCranex7JointState(present_theta, present_angvel, present_current);
         forwardKinematics2Dof(&present_pos, present_theta);
-        printf("Target position [x y]:[%lf %lf]\n", target_pos.x, target_pos.y);
-        printf("Present position [x y]:[%lf %lf]\n", present_pos.x, present_pos.y);
+        // printf("Target position [x y]:[%lf %lf]\n", target_pos.x, target_pos.y);
+        // printf("Present position [x y]:[%lf %lf]\n", present_pos.x, present_pos.y);
 
         // target_angleを変更
         if (state == 0)
@@ -80,6 +81,6 @@ int main()
     } // end main while
 
     brakeCranex7Joint(); // CRANE X7をブレーキにして終了
-    closeCranex7Port();  //シリアルポートを閉じる
+    // closeCranex7Port();  //シリアルポートを閉じる
     return 0;
 }
