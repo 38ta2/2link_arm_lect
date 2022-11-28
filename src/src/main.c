@@ -1,13 +1,17 @@
-//#include<Arduino.h>
 #include <stdio.h>
 #include <unistd.h>
 #include "../lib/Servo/src/Servo.h"
 #include "../src/matrix.h"
 #include "../src/calculate.c";
 
-const int pin = {1, 2, 3};
+Servo myservo1, myservo2, myservo3; // Servoオブジェクトの宣言
 
-int PULSE_WIDTH = 1450;
+void setup()
+{
+    myservo1.attach(7, 500, 2400); // サーボの割当(パルス幅500~2400msに指定)
+    myservo2.attach(8, 500, 2400); // サーボの割当(パルス幅500~2400msに指定)
+    myservo3.attach(9, 500, 2400); // サーボの割当(パルス幅500~2400msに指定)
+}
 
 int main()
 {
