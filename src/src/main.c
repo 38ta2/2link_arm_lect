@@ -1,7 +1,13 @@
+//#include<Arduino.h>
 #include <stdio.h>
 #include <unistd.h>
+#include "../lib/Servo/src/Servo.h"
 #include "../src/matrix.h"
 #include "../src/calculate.c";
+
+const int pin = {1, 2, 3};
+
+int PULSE_WIDTH = 1450;
 
 int main()
 {
