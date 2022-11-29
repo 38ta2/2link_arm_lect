@@ -8,8 +8,8 @@ Servo myservo1, myservo2, myservo3; // Servoオブジェクトの宣言
 
 void setup()
 {
-    myservo1.attach(7, 500, 2400); // サーボの割当(パルス幅500~2400msに指定)
-    myservo2.attach(8, 500, 2400); // サーボの割当(パルス幅500~2400msに指定)
+    myservo1.attach(6, 500, 2400); // サーボの割当(パルス幅500~2400msに指定)
+    myservo2.attach(5, 500, 2400); // サーボの割当(パルス幅500~2400msに指定)
     myservo3.attach(9, 500, 2400); // サーボの割当(パルス幅500~2400msに指定)
 }
 
@@ -57,9 +57,11 @@ int main()
         {
             break;
         }
-        setCranex7Angle(target_theta);
+        // setCranex7Angle(target_theta);
+        myservo.write(theta[1])
+            myservo.write(theta[3])
 
-        sleep(3);
+                sleep(3);
         double present_theta[JOINT_NUM] = target_theta[JOINT_NUM]; //現在角度を格納する変数
         double present_current[JOINT_NUM] = 1.7;                   //現在トルクを格納する変数
         getCranex7JointState(present_theta, present_angvel, present_current);
