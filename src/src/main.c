@@ -19,12 +19,12 @@ void setup()
 int main()
 {
     // uint8_t operating_mode[JOINT_NUM] = {POSITION_CONTROL_MODE, POSITION_CONTROL_MODE, POSITION_CONTROL_MODE, POSITION_CONTROL_MODE, POSITION_CONTROL_MODE, POSITION_CONTROL_MODE, POSITION_CONTROL_MODE, POSITION_CONTROL_MODE};
-    VECTOR_3D target_pos = {0};              //目標位置格納用の変数
-    VECTOR_3D target_pos1 = {0.25, 0.15, 0}; //目標位置1
-    VECTOR_3D target_pos2 = {0.35, 0.15, 0}; //目標位置2
-    VECTOR_3D target_pos3 = {0.35, 0.25, 0}; //目標位置3
-    VECTOR_3D target_pos4 = {0.25, 0.25, 0}; //目標位置4
-    VECTOR_3D present_pos = {0};             //現在位置格納用の変数
+    VECTOR_3D target_pos = {0};          //目標位置格納用の変数
+    VECTOR_3D target_pos1 = {30, 50, 0}; //目標位置1
+    VECTOR_3D target_pos2 = {0, 50, 0};  //目標位置2
+    VECTOR_3D target_pos3 = {30, 50, 0}; //目標位置3
+    VECTOR_3D target_pos4 = {30, 0, 0};  //目標位置4
+    VECTOR_3D present_pos = {0};         //現在位置格納用の変数
 
     double target_theta[JOINT_NUM] = {0};    //目標角度格納用の変数
     double present_theta[JOINT_NUM] = {0};   //現在角度を格納する変数
