@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <math.h>
-#include "../src/param.c"
+#include "calculate.hpp"
+#include "param.hpp"
 
 int forwardKinematics2Dof(VECTOR_3D *p, double *theta)
 {

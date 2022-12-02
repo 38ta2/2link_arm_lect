@@ -1,12 +1,14 @@
+#include <Arduino.h>
 #include <stdio.h>
 #include <unistd.h>
-#include "../lib/Servo/src/Servo.h"
-#include "../src/matrix.h"
-#include "../src/calculate.c";
+#include <Servo.h>
+#include "matrix.h"
+#include "calculate.hpp"
+#include "param.hpp"
 
 Servo myservo1, myservo2, myservo3; // Servoオブジェクトの宣言
 
-void setup()
+int main()
 {
     myservo1.attach(6, 500, 2400); // サーボの割当(パルス幅500~2400msに指定)
     myservo2.attach(5, 500, 2400); // サーボの割当(パルス幅500~2400msに指定)
@@ -14,10 +16,6 @@ void setup()
     myservo1.write(90);
     myservo3.write(90);
     myservo3.write(90);
-}
-
-int main()
-{
     // uint8_t operating_mode[JOINT_NUM] = {POSITION_CONTROL_MODE, POSITION_CONTROL_MODE, POSITION_CONTROL_MODE, POSITION_CONTROL_MODE, POSITION_CONTROL_MODE, POSITION_CONTROL_MODE, POSITION_CONTROL_MODE, POSITION_CONTROL_MODE};
     VECTOR_3D target_pos = {0};          //目標位置格納用の変数
     VECTOR_3D target_pos1 = {30, 50, 0}; //目標位置1
@@ -61,13 +59,13 @@ int main()
             break;
         }
         // setCranex7Angle(target_theta);
-        myservo1.write(90 + theta[1] * 57.296);
-        myservo3.write(90 + theta[3] * 57.296);
+        myservo1.write(90 + target_theta[1] * 57.296);
+        myservo3.write(90 + target_theta[3] * 57.296);
 
-        sleep(3);
-        double present_theta[JOINT_NUM] = target_theta[JOINT_NUM]; //現在角度を格納する変数
-        double present_current[JOINT_NUM] = 1.7;                   //現在トルクを格納する変数
-        getCranex7JointState(present_theta, present_angvel, present_current);
+        delay(3000);
+        present_theta[JOINT_NUM] = target_theta[JOINT_NUM]; //現在角度を格納する変数
+        // double present_current[JOINT_NUM] = {1.7, 1.7, 1.7};       //現在トルクを格納する変数
+        // getCranex7JointState(present_theta, present_angvel, present_current);
         forwardKinematics2Dof(&present_pos, present_theta);
         // printf("Target position [x y]:[%lf %lf]\n", target_pos.x, target_pos.y);
         // printf("Present position [x y]:[%lf %lf]\n", present_pos.x, present_pos.y);
@@ -95,7 +93,7 @@ int main()
         }
     } // end main while
 
-    brakeCranex7Joint(); // CRANE X7をブレーキにして終了
-    // closeCranex7Port();  //シリアルポートを閉じる
+    // brakeCranex7Joint(); // CRANE X7をブレーキにして終了
+    //  closeCranex7Port();  //シリアルポートを閉じる
     return 0;
 }

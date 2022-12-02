@@ -1,3 +1,4 @@
+#pragma once
 /**
  * @file matrix.h
  * @brief bare minimum matrix library

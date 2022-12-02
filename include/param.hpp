@@ -1,3 +1,4 @@
+#pragma once
 typedef struct
 {
     double min; // minimum movable range
@@ -14,11 +15,4 @@ static const JOINT_RANGE joint_range[JOINT_NUM] = {
     {-1.570, 1.570}, // joint 2
     {-1.570, 1.570}, // joint 3
 };
-void getJointRange(JOINT_RANGE *joint_parameter)
-{
-    int i;
-    for (i = 0; i < JOINT_NUM; i++)
-    {
-        joint_parameter[i] = joint_range[i];
-    }
-}
+void getJointRange(JOINT_RANGE *joint_parameter);
