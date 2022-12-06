@@ -5,8 +5,8 @@
 
 int forwardKinematics2Dof(VECTOR_3D *p, double *theta)
 {
-    double L1 = 80;
-    double L2 = 55;
+    double L1 = 0.080;
+    double L2 = 0.055;
 
     double C1 = cos(theta[1]);
     double C12 = cos(theta[1] + theta[3]);
