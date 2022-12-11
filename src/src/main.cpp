@@ -31,12 +31,12 @@ void loop()
 
     double target_theta[JOINT_NUM] = {0};  // 目標角度格納用の変数
     double present_theta[JOINT_NUM] = {0}; // 現在角度を格納する変数
+    double rad[JOINT_NUM] = {0};
     // double present_angvel[JOINT_NUM] = {0};  //現在速度を格納する変数
     // double present_current[JOINT_NUM] = {0}; //現在トルクを格納する変数
 
     int state = 0; // 目標位置を切り替えるための変数
     int cnt = 0;   // ループのカウント
-    myservo2.write(180);
 
     // printf("Press any key to start (or press q to quit)\n");
     // if (getchar() == ('q'))
@@ -66,8 +66,13 @@ void loop()
             break;
         }
         // setCranex7Angle(target_theta);
-        myservo1.write(90 + target_theta[1]);
-        myservo3.write(90 + target_theta[3]);
+        for (int i = 1; i < 4; i++)
+        {
+            rad[i] = target_theta[i] * (180 / M_PI);
+            rad[i] += 90;
+        }
+        myservo1.write(rad[1]);
+        myservo3.write(rad[3]);
 
         delay(3000);
         present_theta[JOINT_NUM] = target_theta[JOINT_NUM]; // 現在角度を格納する変数
