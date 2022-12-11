@@ -23,10 +23,10 @@ void loop()
 
     // uint8_t operating_mode[JOINT_NUM] = {POSITION_CONTROL_MODE, POSITION_CONTROL_MODE, POSITION_CONTROL_MODE, POSITION_CONTROL_MODE, POSITION_CONTROL_MODE, POSITION_CONTROL_MODE, POSITION_CONTROL_MODE, POSITION_CONTROL_MODE};
     VECTOR_3D target_pos = {0};                // 目標位置格納用の変数
-    VECTOR_3D target_pos1 = {0.030, 0.050, 0}; // 目標位置1
-    VECTOR_3D target_pos2 = {0, 0.050, 0};     // 目標位置2
-    VECTOR_3D target_pos3 = {0.030, 0.050, 0}; // 目標位置3
-    VECTOR_3D target_pos4 = {0.030, 0, 0};     // 目標位置4
+    VECTOR_3D target_pos1 = {0.090, 0.050, 0}; // 目標位置1
+    VECTOR_3D target_pos2 = {0.090, 0.090, 0}; // 目標位置2
+    VECTOR_3D target_pos3 = {0.120, 0.090, 0}; // 目標位置3
+    VECTOR_3D target_pos4 = {0.120, 0.050, 0}; // 目標位置4
     VECTOR_3D present_pos = {0};               // 現在位置格納用の変数
 
     double target_theta[JOINT_NUM] = {0};  // 目標角度格納用の変数
@@ -39,21 +39,21 @@ void loop()
     myservo2.write(180);
 
     // printf("Press any key to start (or press q to quit)\n");
-    if (getchar() == ('q'))
-        // return 0;
+    // if (getchar() == ('q'))
+    // return 0;
 
-        // 運動学ライブラリの初期化
-        // initParam();
+    // 運動学ライブラリの初期化
+    // initParam();
 
-        // サーボ関連の設定の初期化
-        /// if (initilizeCranex7(operating_mode))
-        /// {
-        ///    return 1;
-        ///}
-        // CRANE-X7のトルクON
-        // setCranex7TorqueEnable(TORQUE_ENABLE);
+    // サーボ関連の設定の初期化
+    /// if (initilizeCranex7(operating_mode))
+    /// {
+    ///    return 1;
+    ///}
+    // CRANE-X7のトルクON
+    // setCranex7TorqueEnable(TORQUE_ENABLE);
 
-        target_pos = target_pos1;
+    // target_pos = target_pos1;
 
     target_pos = target_pos1;
     // main関数のループ
