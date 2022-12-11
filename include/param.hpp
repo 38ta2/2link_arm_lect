@@ -11,8 +11,8 @@ typedef struct
 
 static const JOINT_RANGE joint_range[JOINT_NUM] = {
     /*  min [rad], max[rad]  */
-    {-1.570, 1.570}, // joint 1
-    {-1.570, 1.570}, // joint 2
-    {-1.570, 1.570}, // joint 3
+    {-2.740, 2.740}, // joint 1
+    {0.000, 3.141},  // joint 2
+    {-2.740, 2.740}, // joint 3
 };
 void getJointRange(JOINT_RANGE *joint_parameter);
