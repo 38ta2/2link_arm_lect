@@ -57,9 +57,9 @@ void loop()
 
     target_pos = target_pos1;
     // main関数のループ
-    while (cnt < 9)
+    for (cnt = 1; cnt <= 10; cnt++)
     { // 10回繰り返したらプログラムを終了する
-        cnt++;
+        cnt += 1;
 
         if (inverseKinematics2Dof(target_pos, target_theta))
         {
