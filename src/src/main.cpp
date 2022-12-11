@@ -22,20 +22,20 @@ void loop()
 {
 
     // uint8_t operating_mode[JOINT_NUM] = {POSITION_CONTROL_MODE, POSITION_CONTROL_MODE, POSITION_CONTROL_MODE, POSITION_CONTROL_MODE, POSITION_CONTROL_MODE, POSITION_CONTROL_MODE, POSITION_CONTROL_MODE, POSITION_CONTROL_MODE};
-    VECTOR_3D target_pos = {0};                //目標位置格納用の変数
-    VECTOR_3D target_pos1 = {0.030, 0.050, 0}; //目標位置1
-    VECTOR_3D target_pos2 = {0, 0.050, 0};     //目標位置2
-    VECTOR_3D target_pos3 = {0.030, 0.050, 0}; //目標位置3
-    VECTOR_3D target_pos4 = {0.030, 0, 0};     //目標位置4
-    VECTOR_3D present_pos = {0};               //現在位置格納用の変数
+    VECTOR_3D target_pos = {0};                // 目標位置格納用の変数
+    VECTOR_3D target_pos1 = {0.030, 0.050, 0}; // 目標位置1
+    VECTOR_3D target_pos2 = {0, 0.050, 0};     // 目標位置2
+    VECTOR_3D target_pos3 = {0.030, 0.050, 0}; // 目標位置3
+    VECTOR_3D target_pos4 = {0.030, 0, 0};     // 目標位置4
+    VECTOR_3D present_pos = {0};               // 現在位置格納用の変数
 
-    double target_theta[JOINT_NUM] = {0};  //目標角度格納用の変数
-    double present_theta[JOINT_NUM] = {0}; //現在角度を格納する変数
+    double target_theta[JOINT_NUM] = {0};  // 目標角度格納用の変数
+    double present_theta[JOINT_NUM] = {0}; // 現在角度を格納する変数
     // double present_angvel[JOINT_NUM] = {0};  //現在速度を格納する変数
     // double present_current[JOINT_NUM] = {0}; //現在トルクを格納する変数
 
-    int state = 0; //目標位置を切り替えるための変数
-    int cnt = 0;   //ループのカウント
+    int state = 0; // 目標位置を切り替えるための変数
+    int cnt = 0;   // ループのカウント
     myservo2.write(180);
 
     // printf("Press any key to start (or press q to quit)\n");
@@ -66,11 +66,11 @@ void loop()
             break;
         }
         // setCranex7Angle(target_theta);
-        myservo1.write(90 + target_theta[1] * 57.296);
-        myservo3.write(90 + target_theta[3] * 57.296);
+        myservo1.write(90 + target_theta[1]);
+        myservo3.write(90 + target_theta[3]);
 
         delay(3000);
-        present_theta[JOINT_NUM] = target_theta[JOINT_NUM]; //現在角度を格納する変数
+        present_theta[JOINT_NUM] = target_theta[JOINT_NUM]; // 現在角度を格納する変数
         // double present_current[JOINT_NUM] = {1.7, 1.7, 1.7};       //現在トルクを格納する変数
         // getCranex7JointState(present_theta, present_angvel, present_current);
         forwardKinematics2Dof(&present_pos, present_theta);
