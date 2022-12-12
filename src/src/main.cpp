@@ -55,7 +55,7 @@ void loop()
 
     // target_pos = target_pos1;
 
-    target_pos = target_pos1;
+    target_pos = target_pos4;
     // main関数のループ
     for (cnt = 1; cnt <= 10; cnt++)
     { // 10回繰り返したらプログラムを終了する
@@ -70,17 +70,18 @@ void loop()
         {
             rad[i] = target_theta[i] * (180 / M_PI);
             rad[i] += 90;
+            rad[i] = abs(rad[i]);
         }
         myservo1.write(rad[1]);
         myservo3.write(rad[3]);
 
-        delay(3000);
-        present_theta[JOINT_NUM] = target_theta[JOINT_NUM]; // 現在角度を格納する変数
-        // double present_current[JOINT_NUM] = {1.7, 1.7, 1.7};       //現在トルクを格納する変数
-        // getCranex7JointState(present_theta, present_angvel, present_current);
-        forwardKinematics2Dof(&present_pos, present_theta);
-        // printf("Target position [x y]:[%lf %lf]\n", target_pos.x, target_pos.y);
-        // printf("Present position [x y]:[%lf %lf]\n", present_pos.x, present_pos.y);
+        delay(300);
+        //  present_theta[JOINT_NUM] = target_theta[JOINT_NUM]; // 現在角度を格納する変数
+        //   double present_current[JOINT_NUM] = {1.7, 1.7, 1.7};       //現在トルクを格納する変数
+        //   getCranex7JointState(present_theta, present_angvel, present_current);
+        //  forwardKinematics2Dof(&present_pos, present_theta);
+        //   printf("Target position [x y]:[%lf %lf]\n", target_pos.x, target_pos.y);
+        //   printf("Present position [x y]:[%lf %lf]\n", present_pos.x, present_pos.y);
 
         // target_angleを変更
         if (state == 0)

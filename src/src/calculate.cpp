@@ -49,9 +49,11 @@ int inverseKinematics2Dof(VECTOR_3D p, double *theta)
     // 得られた関節角度が可動範囲外であればエラーを返す
     for (int i = 0; i < 3; i++)
     {
-        if (((joint_range[i].min) > (theta[i])) || ((theta[i]) > (joint_range[i].max)))
+        int r = i - 1;
+        // printf("%d is i_limit", i);
+        if (((joint_range[i].min) > (theta[r])) || ((theta[r]) > (joint_range[i].max)))
         {
-            printf("Theta[ %d]　is out of range.\n", i);
+            printf("Theta %d is out of range. \n", i);
             return 1;
         }
     }
