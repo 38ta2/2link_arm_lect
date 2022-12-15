@@ -28,10 +28,12 @@ void loop()
     VECTOR_3D target_pos3 = {0.120, 0.090, 0}; // 目標位置3
     VECTOR_3D target_pos4 = {0.120, 0.050, 0}; // 目標位置4
     VECTOR_3D present_pos = {0};               // 現在位置格納用の変数
+    VECTOR_3D current_pos = {0};
 
     double target_theta[JOINT_NUM] = {0};  // 目標角度格納用の変数
     double present_theta[JOINT_NUM] = {0}; // 現在角度を格納する変数
     double rad[JOINT_NUM] = {0};
+
     // double present_angvel[JOINT_NUM] = {0};  //現在速度を格納する変数
     // double present_current[JOINT_NUM] = {0}; //現在トルクを格納する変数
 
@@ -55,7 +57,7 @@ void loop()
 
     // target_pos = target_pos1;
 
-    target_pos = target_pos1;
+    target_pos = target_pos4;
     // main関数のループ
     for (cnt = 1; cnt <= 10; cnt++)
     { // 10回繰り返したらプログラムを終了する
@@ -70,19 +72,13 @@ void loop()
         {
             rad[i] = target_theta[i] * (180 / M_PI);
             rad[i] += 90;
+            rad[i] = abs(rad[i]);
         }
         myservo1.write(rad[1]);
         myservo3.write(rad[3]);
 
-        delay(3000);
-        present_theta[JOINT_NUM] = target_theta[JOINT_NUM]; // 現在角度を格納する変数
-        // double present_current[JOINT_NUM] = {1.7, 1.7, 1.7};       //現在トルクを格納する変数
-        // getCranex7JointState(present_theta, present_angvel, present_current);
-        forwardKinematics2Dof(&present_pos, present_theta);
-        // printf("Target position [x y]:[%lf %lf]\n", target_pos.x, target_pos.y);
-        // printf("Present position [x y]:[%lf %lf]\n", present_pos.x, present_pos.y);
+        delay(300);
 
-        // target_angleを変更
         if (state == 0)
         {
             state = 1;
@@ -103,9 +99,5 @@ void loop()
             state = 0;
             target_pos = target_pos1;
         }
-    } // end main while
-
-    // brakeCranex7Joint(); // CRANE X7をブレーキにして終了
-    //  closeCranex7Port();  //シリアルポートを閉じる
-    // return 0;
+    }
 }
