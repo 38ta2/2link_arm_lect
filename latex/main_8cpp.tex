@@ -1,0 +1,109 @@
+\hypertarget{main_8cpp}{}\doxysection{src/main.cpp ファイル}
+\label{main_8cpp}\index{src/main.cpp@{src/main.cpp}}
+
+
+メインプログラムarduino\+UNO  
+
+
+{\ttfamily \#include $<$Arduino.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$Servo.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}matrix.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}calculate.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}param.\+hpp\char`\"{}}\newline
+\doxysubsection*{関数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}{setup}} ()
+\begin{DoxyCompactList}\small\item\em サーボ初期設定 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_afe461d27b9c48d5921c00d521181f12f}{loop}} ()
+\begin{DoxyCompactList}\small\item\em メインloop \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{変数}
+\begin{DoxyCompactItemize}
+\item 
+Servo \mbox{\hyperlink{main_8cpp_ae88071267b1b72cd52a96df3b393fefe}{myservo1}}
+\item 
+Servo \mbox{\hyperlink{main_8cpp_ae82ce746c91043cc28f8d2d34b313fdf}{myservo2}}
+\item 
+Servo \mbox{\hyperlink{main_8cpp_abfb6bef2695ac8241e5f2fd6e8538f01}{myservo3}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{詳解}
+メインプログラムarduino\+UNO 
+
+\begin{DoxyAuthor}{著者}
+38ta2 
+\end{DoxyAuthor}
+\begin{DoxyDate}{日付}
+14Des2022
+\end{DoxyDate}
+loop内に記述target\+\_\+posの値で動く 
+
+ \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}} に定義があります。
+
+
+
+\doxysubsection{関数詳解}
+\mbox{\Hypertarget{main_8cpp_afe461d27b9c48d5921c00d521181f12f}\label{main_8cpp_afe461d27b9c48d5921c00d521181f12f}} 
+\index{main.cpp@{main.cpp}!loop@{loop}}
+\index{loop@{loop}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily void loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+メインloop 
+
+Arduinoのメイン関数 if (initilize\+Cranex7(operating\+\_\+mode)) \{ return 1; \}
+
+ \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}} の \mbox{\hyperlink{main_8cpp_source_l00040}{40}} 行目に定義があります。
+
+\mbox{\Hypertarget{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}\label{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}} 
+\index{main.cpp@{main.cpp}!setup@{setup}}
+\index{setup@{setup}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily void setup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+サーボ初期設定 
+
+サーボのピン割とパルス、初期値設定 
+
+ \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}} の \mbox{\hyperlink{main_8cpp_source_l00024}{24}} 行目に定義があります。
+
+
+
+\doxysubsection{変数詳解}
+\mbox{\Hypertarget{main_8cpp_ae88071267b1b72cd52a96df3b393fefe}\label{main_8cpp_ae88071267b1b72cd52a96df3b393fefe}} 
+\index{main.cpp@{main.cpp}!myservo1@{myservo1}}
+\index{myservo1@{myservo1}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{myservo1}{myservo1}}
+{\footnotesize\ttfamily Servo myservo1}
+
+
+
+ \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}} の \mbox{\hyperlink{main_8cpp_source_l00017}{17}} 行目に定義があります。
+
+\mbox{\Hypertarget{main_8cpp_ae82ce746c91043cc28f8d2d34b313fdf}\label{main_8cpp_ae82ce746c91043cc28f8d2d34b313fdf}} 
+\index{main.cpp@{main.cpp}!myservo2@{myservo2}}
+\index{myservo2@{myservo2}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{myservo2}{myservo2}}
+{\footnotesize\ttfamily Servo myservo2}
+
+
+
+ \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}} の \mbox{\hyperlink{main_8cpp_source_l00017}{17}} 行目に定義があります。
+
+\mbox{\Hypertarget{main_8cpp_abfb6bef2695ac8241e5f2fd6e8538f01}\label{main_8cpp_abfb6bef2695ac8241e5f2fd6e8538f01}} 
+\index{main.cpp@{main.cpp}!myservo3@{myservo3}}
+\index{myservo3@{myservo3}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{myservo3}{myservo3}}
+{\footnotesize\ttfamily Servo myservo3}
+
+
+
+ \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}} の \mbox{\hyperlink{main_8cpp_source_l00017}{17}} 行目に定義があります。
+

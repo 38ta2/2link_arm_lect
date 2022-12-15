@@ -1,0 +1,61 @@
+\hypertarget{matrix_8h_source}{}\doxysection{matrix.\+h}
+\label{matrix_8h_source}\index{include/matrix.h@{include/matrix.h}}
+\mbox{\hyperlink{matrix_8h}{\mbox{[}詳解\mbox{]}}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00001}00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00009}00009 \textcolor{comment}{// Copyright 2019 RT Corporation}}
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00010}00010 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00011}00011 \textcolor{comment}{// Licensed under the Apache License, Version 2.0 (the "{}License"{});}}
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00012}00012 \textcolor{comment}{// you may not use this file except in compliance with the License.}}
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00013}00013 \textcolor{comment}{// You may obtain a copy of the License at}}
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00014}00014 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00015}00015 \textcolor{comment}{//     http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00016}00016 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00017}00017 \textcolor{comment}{// Unless required by applicable law or agreed to in writing, software}}
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00018}00018 \textcolor{comment}{// distributed under the License is distributed on an "{}AS IS"{} BASIS,}}
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00019}00019 \textcolor{comment}{// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.}}
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00020}00020 \textcolor{comment}{// See the License for the specific language governing permissions and}}
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00021}00021 \textcolor{comment}{// limitations under the License.}}
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00023}00023 \textcolor{preprocessor}{\#ifndef MATRIX\_H\_}}
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00024}\mbox{\hyperlink{matrix_8h_ae86199ee505ca1d8f99e07104e34586c}{00024}} \textcolor{preprocessor}{\#define MATRIX\_H\_}}
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00031}\mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{00031}} \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00032}00032 \{}
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00033}\mbox{\hyperlink{struct_v_e_c_t_o_r__3_d_a796e9ae397dc8750389cc2ae302d14d2}{00033}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{struct_v_e_c_t_o_r__3_d_a796e9ae397dc8750389cc2ae302d14d2}{x}};}
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00034}\mbox{\hyperlink{struct_v_e_c_t_o_r__3_d_acb074dd4bde061f83a3bae05e2b2923f}{00034}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{struct_v_e_c_t_o_r__3_d_acb074dd4bde061f83a3bae05e2b2923f}{y}};}
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00035}\mbox{\hyperlink{struct_v_e_c_t_o_r__3_d_aa1df820218431dae140ebf0667d59192}{00035}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{struct_v_e_c_t_o_r__3_d_aa1df820218431dae140ebf0667d59192}{z}};}
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00036}00036 \} \mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\_3D}};}
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00042}\mbox{\hyperlink{struct_m_a_t_r_i_x__3_d}{00042}} \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00043}00043 \{}
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00044}\mbox{\hyperlink{struct_m_a_t_r_i_x__3_d_a436449027d3deb289ee7ee41419a4b8f}{00044}}     \textcolor{keywordtype}{double} a[3][3];}
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00045}00045 \} \mbox{\hyperlink{struct_m_a_t_r_i_x__3_d}{MATRIX\_3D}};}
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00051}\mbox{\hyperlink{struct_v_e_c_t_o_r__4_d}{00051}} \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00052}00052 \{}
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00053}\mbox{\hyperlink{struct_v_e_c_t_o_r__4_d_a2854331c604050d6725f6dbea6c31ede}{00053}}     \textcolor{keywordtype}{double} x[4];}
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00054}00054 \} \mbox{\hyperlink{struct_v_e_c_t_o_r__4_d}{VECTOR\_4D}};}
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00060}\mbox{\hyperlink{struct_m_a_t_r_i_x__4_d}{00060}} \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00061}00061 \{}
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00062}\mbox{\hyperlink{struct_m_a_t_r_i_x__4_d_a55c2c729d09e3927ccdba68776cc3021}{00062}}     \textcolor{keywordtype}{double} a[4][4];}
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00063}00063 \} \mbox{\hyperlink{struct_m_a_t_r_i_x__4_d}{MATRIX\_4D}};}
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00066}00066 \mbox{\hyperlink{struct_m_a_t_r_i_x__3_d}{MATRIX\_3D}} \mbox{\hyperlink{matrix_8h_a6ef486760e940d65fc7b9dbccf2ce521}{mulMatMat3D}}(\mbox{\hyperlink{struct_m_a_t_r_i_x__3_d}{MATRIX\_3D}}, \mbox{\hyperlink{struct_m_a_t_r_i_x__3_d}{MATRIX\_3D}});}
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00067}00067 \mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\_3D}} \mbox{\hyperlink{matrix_8h_a2a14f4f464e3f5f9b9c5de7367be6ffb}{mulMatVec3D}}(\mbox{\hyperlink{struct_m_a_t_r_i_x__3_d}{MATRIX\_3D}}, \mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\_3D}});}
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00068}00068 \mbox{\hyperlink{struct_m_a_t_r_i_x__3_d}{MATRIX\_3D}} \mbox{\hyperlink{matrix_8h_a3bae79c629fe9495136bf13aafc8f556}{mulScoMat3D}}(\textcolor{keywordtype}{double}, \mbox{\hyperlink{struct_m_a_t_r_i_x__3_d}{MATRIX\_3D}});}
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00069}00069 \mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\_3D}} \mbox{\hyperlink{matrix_8h_aa6164d06833a652a0192335b779f68bf}{mulScoVec3D}}(\textcolor{keywordtype}{double}, \mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\_3D}});}
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00070}00070 \mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\_3D}} \mbox{\hyperlink{matrix_8h_a5eca35a9b951c10885b220f134c11c02}{crsVecVec3D}}(\mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\_3D}}, \mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\_3D}});}
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00071}00071 \mbox{\hyperlink{struct_m_a_t_r_i_x__3_d}{MATRIX\_3D}} \mbox{\hyperlink{matrix_8h_aaaf3c99447ed3db82969795c85c0f503}{sumMatMat3D}}(\mbox{\hyperlink{struct_m_a_t_r_i_x__3_d}{MATRIX\_3D}}, \mbox{\hyperlink{struct_m_a_t_r_i_x__3_d}{MATRIX\_3D}});}
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00072}00072 \mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\_3D}} \mbox{\hyperlink{matrix_8h_aa73b952198cfead8f0f89325ef52659f}{sumVecVec3D}}(\mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\_3D}}, \mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\_3D}});}
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00073}00073 \mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\_3D}} \mbox{\hyperlink{matrix_8h_ae88af13648d90f8bd2a761a4d19725f3}{subVecVec3D}}(\mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\_3D}}, \mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\_3D}});}
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00074}00074 \mbox{\hyperlink{struct_m_a_t_r_i_x__3_d}{MATRIX\_3D}} \mbox{\hyperlink{matrix_8h_a80de652e048ee4e62e224b3bcff98279}{transeposeMat3D}}(\mbox{\hyperlink{struct_m_a_t_r_i_x__3_d}{MATRIX\_3D}});}
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00075}00075 \textcolor{keywordtype}{int} \mbox{\hyperlink{matrix_8h_a72cc5cdc523bdcf139a578a5311ca33e}{inverseMat3D}}(\mbox{\hyperlink{struct_m_a_t_r_i_x__3_d}{MATRIX\_3D}}, \mbox{\hyperlink{struct_m_a_t_r_i_x__3_d}{MATRIX\_3D}} *);}
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00076}00076 \mbox{\hyperlink{struct_m_a_t_r_i_x__4_d}{MATRIX\_4D}} \mbox{\hyperlink{matrix_8h_a6eece280369d2be06c7219ad733d5c00}{mulMatMat4D}}(\mbox{\hyperlink{struct_m_a_t_r_i_x__4_d}{MATRIX\_4D}}, \mbox{\hyperlink{struct_m_a_t_r_i_x__4_d}{MATRIX\_4D}});}
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00077}00077 \mbox{\hyperlink{struct_v_e_c_t_o_r__4_d}{VECTOR\_4D}} \mbox{\hyperlink{matrix_8h_a4b7c10093fb9b110858a961c7514f61b}{mulMatVec4D}}(\mbox{\hyperlink{struct_m_a_t_r_i_x__4_d}{MATRIX\_4D}}, \mbox{\hyperlink{struct_v_e_c_t_o_r__4_d}{VECTOR\_4D}});}
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{matrix_8h_source_l00079}00079 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

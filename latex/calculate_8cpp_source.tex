@@ -1,0 +1,66 @@
+\hypertarget{calculate_8cpp_source}{}\doxysection{calculate.\+cpp}
+\label{calculate_8cpp_source}\index{src/calculate.cpp@{src/calculate.cpp}}
+\mbox{\hyperlink{calculate_8cpp}{\mbox{[}詳解\mbox{]}}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00009}00009 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00010}00010 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00011}00011 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{calculate_8hpp}{calculate.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00012}00012 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{param_8hpp}{param.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00020}\mbox{\hyperlink{calculate_8hpp_a308d266399786c30de6e92182253f953}{00020}} \textcolor{keywordtype}{int} \mbox{\hyperlink{calculate_8cpp_a308d266399786c30de6e92182253f953}{forwardKinematics2Dof}}(\mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\_3D}} *p, \textcolor{keywordtype}{double} *theta)}
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00021}00021 \{}
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00023}00023     \textcolor{keywordtype}{double} L1 = 0.080;}
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00024}00024     \textcolor{keywordtype}{double} L2 = 0.055;}
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00027}00027     \textcolor{keywordtype}{double} C1 = cos(theta[1]);}
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00028}00028     \textcolor{keywordtype}{double} C12 = cos(theta[1] + theta[3]);}
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00029}00029     \textcolor{keywordtype}{double} S1 = sin(theta[1]);}
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00030}00030     \textcolor{keywordtype}{double} S12 = sin(theta[1] + theta[3]);}
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00033}00033     p-\/>\mbox{\hyperlink{struct_v_e_c_t_o_r__3_d_a796e9ae397dc8750389cc2ae302d14d2}{x}} = L1 * C1 + L2 * C12;}
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00034}00034     p-\/>\mbox{\hyperlink{struct_v_e_c_t_o_r__3_d_acb074dd4bde061f83a3bae05e2b2923f}{y}} = L1 * S1 + L2 * S12;}
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00036}00036     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00037}00037 \}}
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00049}\mbox{\hyperlink{calculate_8hpp_ad0d45e8f4fa4b1d39f1e4f748b873473}{00049}} \textcolor{keywordtype}{int} \mbox{\hyperlink{calculate_8cpp_ad0d45e8f4fa4b1d39f1e4f748b873473}{inverseKinematics2Dof}}(\mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\_3D}} p, \textcolor{keywordtype}{double} *theta)}
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00050}00050 \{}
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00051}00051     \textcolor{keywordtype}{double} L1 = 0.080;}
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00052}00052     \textcolor{keywordtype}{double} L2 = 0.055;}
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00053}00053 }
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00054}00054     \textcolor{keywordtype}{double} S2, C2;}
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00056}00056     \textcolor{comment}{// ！ 手先位置の値が可動範囲の外であればエラー値を返す}}
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00057}00057     \textcolor{keywordflow}{if} (((pow(L1 -\/ L2, 2)) > (p.\mbox{\hyperlink{struct_v_e_c_t_o_r__3_d_a796e9ae397dc8750389cc2ae302d14d2}{x}} * p.\mbox{\hyperlink{struct_v_e_c_t_o_r__3_d_a796e9ae397dc8750389cc2ae302d14d2}{x}} + p.\mbox{\hyperlink{struct_v_e_c_t_o_r__3_d_acb074dd4bde061f83a3bae05e2b2923f}{y}} * p.\mbox{\hyperlink{struct_v_e_c_t_o_r__3_d_acb074dd4bde061f83a3bae05e2b2923f}{y}})) || ((p.\mbox{\hyperlink{struct_v_e_c_t_o_r__3_d_a796e9ae397dc8750389cc2ae302d14d2}{x}} * p.\mbox{\hyperlink{struct_v_e_c_t_o_r__3_d_a796e9ae397dc8750389cc2ae302d14d2}{x}} + p.\mbox{\hyperlink{struct_v_e_c_t_o_r__3_d_acb074dd4bde061f83a3bae05e2b2923f}{y}} * p.\mbox{\hyperlink{struct_v_e_c_t_o_r__3_d_acb074dd4bde061f83a3bae05e2b2923f}{y}}) > (pow(L1 + L2, 2))))}
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00058}00058     \{}
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00059}00059         printf(\textcolor{stringliteral}{"{}Target position is out of range.\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00060}00060         \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00061}00061     \}}
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00062}00062 }
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00064}00064     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 3; i++)}
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00065}00065     \{}
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00066}00066         theta[i] = 0;}
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00067}00067     \}}
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00070}00070     C2 = (p.\mbox{\hyperlink{struct_v_e_c_t_o_r__3_d_a796e9ae397dc8750389cc2ae302d14d2}{x}} * p.\mbox{\hyperlink{struct_v_e_c_t_o_r__3_d_a796e9ae397dc8750389cc2ae302d14d2}{x}} + p.\mbox{\hyperlink{struct_v_e_c_t_o_r__3_d_acb074dd4bde061f83a3bae05e2b2923f}{y}} * p.\mbox{\hyperlink{struct_v_e_c_t_o_r__3_d_acb074dd4bde061f83a3bae05e2b2923f}{y}} -\/ L1 * L1 -\/ L2 * L2) / (2 * L1 * L2);}
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00071}00071     \textcolor{comment}{// !acosの戻り値[0:π]、CRANE-\/X7においてθ2の可動はマイナス方向のみ}}
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00072}00072     theta[3] = -\/acos(C2);}
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00073}00073     \textcolor{comment}{// ！ θ1の角度}}
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00074}00074     S2 = sin(theta[3]);}
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00075}00075     theta[1] = atan2((-\/L2 * S2 * p.\mbox{\hyperlink{struct_v_e_c_t_o_r__3_d_a796e9ae397dc8750389cc2ae302d14d2}{x}} + (L1 + L2 * C2) * p.\mbox{\hyperlink{struct_v_e_c_t_o_r__3_d_acb074dd4bde061f83a3bae05e2b2923f}{y}}), ((L1 + L2 * C2) * p.\mbox{\hyperlink{struct_v_e_c_t_o_r__3_d_a796e9ae397dc8750389cc2ae302d14d2}{x}} + L2 * S2 * p.\mbox{\hyperlink{struct_v_e_c_t_o_r__3_d_acb074dd4bde061f83a3bae05e2b2923f}{y}}));}
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00076}00076 }
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00077}00077     \textcolor{comment}{// ！ 得られた関節角度が可動範囲外であればエラーを返す}}
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00078}00078     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 3; i++)}
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00079}00079     \{}
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00080}00080         \textcolor{keywordtype}{int} r = i -\/ 1;}
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00081}00081         \textcolor{comment}{// printf("{}\%d is i\_limit"{}, i);}}
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00082}00082         \textcolor{keywordflow}{if} (((joint\_range[i].min) > (theta[r])) || ((theta[r]) > (joint\_range[i].max)))}
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00083}00083         \{}
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00084}00084             printf(\textcolor{stringliteral}{"{}Theta \%d is out of range. \(\backslash\)n"{}}, i);}
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00085}00085             \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00086}00086         \}}
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00087}00087     \}}
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00088}00088     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{calculate_8cpp_source_l00089}00089 \}}
+
+\end{DoxyCode}

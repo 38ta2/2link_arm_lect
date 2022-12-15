@@ -1,0 +1,117 @@
+\hypertarget{main_8cpp_source}{}\doxysection{main.\+cpp}
+\label{main_8cpp_source}\index{src/main.cpp@{src/main.cpp}}
+\mbox{\hyperlink{main_8cpp}{\mbox{[}詳解\mbox{]}}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00008}00008 \textcolor{preprocessor}{\#include <Arduino.h>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00009}00009 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00010}00010 \textcolor{preprocessor}{\#include <unistd.h>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00011}00011 \textcolor{preprocessor}{\#include <Servo.h>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00012}00012 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{matrix_8h}{matrix.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00013}00013 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{calculate_8hpp}{calculate.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00014}00014 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{param_8hpp}{param.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00016}00016 \textcolor{comment}{// ！ Servoオブジェクトの宣言}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00017}\mbox{\hyperlink{main_8cpp_ae88071267b1b72cd52a96df3b393fefe}{00017}} Servo \mbox{\hyperlink{main_8cpp_ae88071267b1b72cd52a96df3b393fefe}{myservo1}}, \mbox{\hyperlink{main_8cpp_ae82ce746c91043cc28f8d2d34b313fdf}{myservo2}}, \mbox{\hyperlink{main_8cpp_abfb6bef2695ac8241e5f2fd6e8538f01}{myservo3}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00024}\mbox{\hyperlink{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}{00024}} \textcolor{keywordtype}{void} \mbox{\hyperlink{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}{setup}}()}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00025}00025 \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00026}00026     \mbox{\hyperlink{main_8cpp_ae88071267b1b72cd52a96df3b393fefe}{myservo1}}.attach(6, 500, 2400); \textcolor{comment}{// サーボの割当(パルス幅500\string~2400msに指定)}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00027}00027     \mbox{\hyperlink{main_8cpp_ae82ce746c91043cc28f8d2d34b313fdf}{myservo2}}.attach(5, 500, 2400); \textcolor{comment}{// サーボの割当(パルス幅500\string~2400msに指定)}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00028}00028     \mbox{\hyperlink{main_8cpp_abfb6bef2695ac8241e5f2fd6e8538f01}{myservo3}}.attach(9, 500, 2400); \textcolor{comment}{// サーボの割当(パルス幅500\string~2400msに指定)}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00029}00029     \textcolor{comment}{// printf("{}2"{});}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00030}00030     \mbox{\hyperlink{main_8cpp_ae88071267b1b72cd52a96df3b393fefe}{myservo1}}.write(90);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00031}00031     \mbox{\hyperlink{main_8cpp_ae82ce746c91043cc28f8d2d34b313fdf}{myservo2}}.write(90);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00032}00032     \mbox{\hyperlink{main_8cpp_abfb6bef2695ac8241e5f2fd6e8538f01}{myservo3}}.write(90);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00033}00033     delay(1000);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00034}00034 \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00040}\mbox{\hyperlink{main_8cpp_afe461d27b9c48d5921c00d521181f12f}{00040}} \textcolor{keywordtype}{void} \mbox{\hyperlink{main_8cpp_afe461d27b9c48d5921c00d521181f12f}{loop}}()}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00041}00041 \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00043}00043     \textcolor{comment}{// uint8\_t operating\_mode[JOINT\_NUM] = \{POSITION\_CONTROL\_MODE, POSITION\_CONTROL\_MODE, POSITION\_CONTROL\_MODE, POSITION\_CONTROL\_MODE, POSITION\_CONTROL\_MODE, POSITION\_CONTROL\_MODE, POSITION\_CONTROL\_MODE, POSITION\_CONTROL\_MODE\};}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00044}00044     \mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\_3D}} target\_pos = \{0\};                \textcolor{comment}{// 目標位置格納用の変数}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00045}00045     \mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\_3D}} target\_pos1 = \{0.090, 0.050, 0\}; \textcolor{comment}{// 目標位置1}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00046}00046     \mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\_3D}} target\_pos2 = \{0.090, 0.090, 0\}; \textcolor{comment}{// 目標位置2}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00047}00047     \mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\_3D}} target\_pos3 = \{0.120, 0.090, 0\}; \textcolor{comment}{// 目標位置3}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00048}00048     \mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\_3D}} target\_pos4 = \{0.120, 0.050, 0\}; \textcolor{comment}{// 目標位置4}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00049}00049     \mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\_3D}} present\_pos = \{0\};               \textcolor{comment}{// 現在位置格納用の変数}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00051}00051     \textcolor{keywordtype}{double} target\_theta[\mbox{\hyperlink{param_8hpp_a77a75ab2f04afeb199b0a5ad94c0d8c6}{JOINT\_NUM}}] = \{0\};  \textcolor{comment}{// 目標角度格納用の変数}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00052}00052     \textcolor{keywordtype}{double} present\_theta[\mbox{\hyperlink{param_8hpp_a77a75ab2f04afeb199b0a5ad94c0d8c6}{JOINT\_NUM}}] = \{0\}; \textcolor{comment}{// 現在角度を格納する変数}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00053}00053     \textcolor{keywordtype}{double} rad[\mbox{\hyperlink{param_8hpp_a77a75ab2f04afeb199b0a5ad94c0d8c6}{JOINT\_NUM}}] = \{0\};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00054}00054     \textcolor{comment}{// double present\_angvel[JOINT\_NUM] = \{0\};  //現在速度を格納する変数}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00055}00055     \textcolor{comment}{// double present\_current[JOINT\_NUM] = \{0\}; //現在トルクを格納する変数}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00057}00057     \textcolor{keywordtype}{int} state = 0; \textcolor{comment}{// 目標位置を切り替えるための変数}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00058}00058     \textcolor{keywordtype}{int} cnt = 0;   \textcolor{comment}{// ループのカウント}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00060}00060     \textcolor{comment}{// printf("{}Press any key to start (or press q to quit)\(\backslash\)n"{});}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00061}00061     \textcolor{comment}{// if (getchar() == ('q'))}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00062}00062     \textcolor{comment}{// return 0;}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00063}00063 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00064}00064     \textcolor{comment}{// 運動学ライブラリの初期化}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00065}00065     \textcolor{comment}{// initParam();}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00067}00067     \textcolor{comment}{// サーボ関連の設定の初期化}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00072}00072 \textcolor{comment}{}    \textcolor{comment}{// CRANE-\/X7のトルクON}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00073}00073     \textcolor{comment}{// setCranex7TorqueEnable(TORQUE\_ENABLE);}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00074}00074 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00075}00075     \textcolor{comment}{// target\_pos = target\_pos1;}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00076}00076 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00077}00077     target\_pos = target\_pos4;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00078}00078     \textcolor{comment}{// main関数のループ}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00079}00079     \textcolor{keywordflow}{for} (cnt = 1; cnt <= 10; cnt++)}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00080}00080     \{ \textcolor{comment}{// 10回繰り返したらプログラムを終了する}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00081}00081         cnt += 1;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00082}00082 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00083}00083         \textcolor{keywordflow}{if} (\mbox{\hyperlink{calculate_8hpp_ad0d45e8f4fa4b1d39f1e4f748b873473}{inverseKinematics2Dof}}(target\_pos, target\_theta))}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00084}00084         \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00085}00085             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00086}00086         \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00087}00087         \textcolor{comment}{// setCranex7Angle(target\_theta);}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00088}00088         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 1; i < 4; i++)}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00089}00089         \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00090}00090             rad[i] = target\_theta[i] * (180 / M\_PI);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00091}00091             rad[i] += 90;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00092}00092             rad[i] = abs(rad[i]);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00093}00093         \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00094}00094         \mbox{\hyperlink{main_8cpp_ae88071267b1b72cd52a96df3b393fefe}{myservo1}}.write(rad[1]);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00095}00095         \mbox{\hyperlink{main_8cpp_abfb6bef2695ac8241e5f2fd6e8538f01}{myservo3}}.write(rad[3]);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00096}00096 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00097}00097         delay(300);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00098}00098         \textcolor{comment}{//  present\_theta[JOINT\_NUM] = target\_theta[JOINT\_NUM]; // 現在角度を格納する変数}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00099}00099         \textcolor{comment}{//   double present\_current[JOINT\_NUM] = \{1.7, 1.7, 1.7\};       //現在トルクを格納する変数}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00100}00100         \textcolor{comment}{//   getCranex7JointState(present\_theta, present\_angvel, present\_current);}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00101}00101         \textcolor{comment}{//  forwardKinematics2Dof(\&present\_pos, present\_theta);}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00102}00102         \textcolor{comment}{//   printf("{}Target position [x y]:[\%lf \%lf]\(\backslash\)n"{}, target\_pos.x, target\_pos.y);}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00103}00103         \textcolor{comment}{//   printf("{}Present position [x y]:[\%lf \%lf]\(\backslash\)n"{}, present\_pos.x, present\_pos.y);}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00104}00104 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00105}00105         \textcolor{comment}{// target\_angleを変更}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00106}00106         \textcolor{keywordflow}{if} (state == 0)}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00107}00107         \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00108}00108             state = 1;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00109}00109             target\_pos = target\_pos2;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00110}00110         \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00111}00111         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (state == 1)}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00112}00112         \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00113}00113             state = 2;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00114}00114             target\_pos = target\_pos3;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00115}00115         \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00116}00116         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (state == 2)}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00117}00117         \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00118}00118             state = 3;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00119}00119             target\_pos = target\_pos4;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00120}00120         \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00121}00121         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00122}00122         \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00123}00123             state = 0;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00124}00124             target\_pos = target\_pos1;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00125}00125         \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00126}00126     \} \textcolor{comment}{// end main while}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00127}00127 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00128}00128     \textcolor{comment}{// brakeCranex7Joint(); // CRANE X7をブレーキにして終了}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00129}00129     \textcolor{comment}{//  closeCranex7Port();  //シリアルポートを閉じる}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00130}00130     \textcolor{comment}{// return 0;}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00131}00131 \}}
+
+\end{DoxyCode}

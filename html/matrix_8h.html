@@ -1,0 +1,517 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.5"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>2リンクアームで制御を学ぶ: include/matrix.h ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">2リンクアームで制御を学ぶ
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.5 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">クラス</a> &#124;
+<a href="#define-members">マクロ定義</a> &#124;
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle"><div class="title">matrix.h ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>bare minimum matrix library  
+<a href="#details">[詳解]</a></p>
+
+<p><a href="matrix_8h_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+クラス</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_v_e_c_t_o_r__3_d.html">VECTOR_3D</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">3 dimentional vector  <a href="struct_v_e_c_t_o_r__3_d.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_m_a_t_r_i_x__3_d.html">MATRIX_3D</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">3 raws x 3 columns matrix  <a href="struct_m_a_t_r_i_x__3_d.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_v_e_c_t_o_r__4_d.html">VECTOR_4D</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">4 dimentional vector  <a href="struct_v_e_c_t_o_r__4_d.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_m_a_t_r_i_x__4_d.html">MATRIX_4D</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">4 raws x 4 columns matrix  <a href="struct_m_a_t_r_i_x__4_d.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:ae86199ee505ca1d8f99e07104e34586c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrix_8h.html#ae86199ee505ca1d8f99e07104e34586c">MATRIX_H_</a></td></tr>
+<tr class="separator:ae86199ee505ca1d8f99e07104e34586c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:a6ef486760e940d65fc7b9dbccf2ce521"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_m_a_t_r_i_x__3_d.html">MATRIX_3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrix_8h.html#a6ef486760e940d65fc7b9dbccf2ce521">mulMatMat3D</a> (<a class="el" href="struct_m_a_t_r_i_x__3_d.html">MATRIX_3D</a>, <a class="el" href="struct_m_a_t_r_i_x__3_d.html">MATRIX_3D</a>)</td></tr>
+<tr class="separator:a6ef486760e940d65fc7b9dbccf2ce521"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a14f4f464e3f5f9b9c5de7367be6ffb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_v_e_c_t_o_r__3_d.html">VECTOR_3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrix_8h.html#a2a14f4f464e3f5f9b9c5de7367be6ffb">mulMatVec3D</a> (<a class="el" href="struct_m_a_t_r_i_x__3_d.html">MATRIX_3D</a>, <a class="el" href="struct_v_e_c_t_o_r__3_d.html">VECTOR_3D</a>)</td></tr>
+<tr class="separator:a2a14f4f464e3f5f9b9c5de7367be6ffb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bae79c629fe9495136bf13aafc8f556"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_m_a_t_r_i_x__3_d.html">MATRIX_3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrix_8h.html#a3bae79c629fe9495136bf13aafc8f556">mulScoMat3D</a> (double, <a class="el" href="struct_m_a_t_r_i_x__3_d.html">MATRIX_3D</a>)</td></tr>
+<tr class="separator:a3bae79c629fe9495136bf13aafc8f556"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6164d06833a652a0192335b779f68bf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_v_e_c_t_o_r__3_d.html">VECTOR_3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrix_8h.html#aa6164d06833a652a0192335b779f68bf">mulScoVec3D</a> (double, <a class="el" href="struct_v_e_c_t_o_r__3_d.html">VECTOR_3D</a>)</td></tr>
+<tr class="separator:aa6164d06833a652a0192335b779f68bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5eca35a9b951c10885b220f134c11c02"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_v_e_c_t_o_r__3_d.html">VECTOR_3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrix_8h.html#a5eca35a9b951c10885b220f134c11c02">crsVecVec3D</a> (<a class="el" href="struct_v_e_c_t_o_r__3_d.html">VECTOR_3D</a>, <a class="el" href="struct_v_e_c_t_o_r__3_d.html">VECTOR_3D</a>)</td></tr>
+<tr class="separator:a5eca35a9b951c10885b220f134c11c02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaaf3c99447ed3db82969795c85c0f503"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_m_a_t_r_i_x__3_d.html">MATRIX_3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrix_8h.html#aaaf3c99447ed3db82969795c85c0f503">sumMatMat3D</a> (<a class="el" href="struct_m_a_t_r_i_x__3_d.html">MATRIX_3D</a>, <a class="el" href="struct_m_a_t_r_i_x__3_d.html">MATRIX_3D</a>)</td></tr>
+<tr class="separator:aaaf3c99447ed3db82969795c85c0f503"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa73b952198cfead8f0f89325ef52659f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_v_e_c_t_o_r__3_d.html">VECTOR_3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrix_8h.html#aa73b952198cfead8f0f89325ef52659f">sumVecVec3D</a> (<a class="el" href="struct_v_e_c_t_o_r__3_d.html">VECTOR_3D</a>, <a class="el" href="struct_v_e_c_t_o_r__3_d.html">VECTOR_3D</a>)</td></tr>
+<tr class="separator:aa73b952198cfead8f0f89325ef52659f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae88af13648d90f8bd2a761a4d19725f3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_v_e_c_t_o_r__3_d.html">VECTOR_3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrix_8h.html#ae88af13648d90f8bd2a761a4d19725f3">subVecVec3D</a> (<a class="el" href="struct_v_e_c_t_o_r__3_d.html">VECTOR_3D</a>, <a class="el" href="struct_v_e_c_t_o_r__3_d.html">VECTOR_3D</a>)</td></tr>
+<tr class="separator:ae88af13648d90f8bd2a761a4d19725f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80de652e048ee4e62e224b3bcff98279"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_m_a_t_r_i_x__3_d.html">MATRIX_3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrix_8h.html#a80de652e048ee4e62e224b3bcff98279">transeposeMat3D</a> (<a class="el" href="struct_m_a_t_r_i_x__3_d.html">MATRIX_3D</a>)</td></tr>
+<tr class="separator:a80de652e048ee4e62e224b3bcff98279"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72cc5cdc523bdcf139a578a5311ca33e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrix_8h.html#a72cc5cdc523bdcf139a578a5311ca33e">inverseMat3D</a> (<a class="el" href="struct_m_a_t_r_i_x__3_d.html">MATRIX_3D</a>, <a class="el" href="struct_m_a_t_r_i_x__3_d.html">MATRIX_3D</a> *)</td></tr>
+<tr class="separator:a72cc5cdc523bdcf139a578a5311ca33e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6eece280369d2be06c7219ad733d5c00"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_m_a_t_r_i_x__4_d.html">MATRIX_4D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrix_8h.html#a6eece280369d2be06c7219ad733d5c00">mulMatMat4D</a> (<a class="el" href="struct_m_a_t_r_i_x__4_d.html">MATRIX_4D</a>, <a class="el" href="struct_m_a_t_r_i_x__4_d.html">MATRIX_4D</a>)</td></tr>
+<tr class="separator:a6eece280369d2be06c7219ad733d5c00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b7c10093fb9b110858a961c7514f61b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_v_e_c_t_o_r__4_d.html">VECTOR_4D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrix_8h.html#a4b7c10093fb9b110858a961c7514f61b">mulMatVec4D</a> (<a class="el" href="struct_m_a_t_r_i_x__4_d.html">MATRIX_4D</a>, <a class="el" href="struct_v_e_c_t_o_r__4_d.html">VECTOR_4D</a>)</td></tr>
+<tr class="separator:a4b7c10093fb9b110858a961c7514f61b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p >bare minimum matrix library </p>
+<dl class="section author"><dt>著者</dt><dd>RT Corporation </dd></dl>
+<dl class="section date"><dt>日付</dt><dd>2019-2020 </dd></dl>
+<dl class="section copyright"><dt>著作権所有</dt><dd>License: Apache License, Version 2.0 </dd></dl>
+
+<p class="definition"> <a class="el" href="matrix_8h_source.html">matrix.h</a> に定義があります。</p>
+</div><h2 class="groupheader">マクロ定義詳解</h2>
+<a id="ae86199ee505ca1d8f99e07104e34586c" name="ae86199ee505ca1d8f99e07104e34586c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae86199ee505ca1d8f99e07104e34586c">&#9670;&#160;</a></span>MATRIX_H_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MATRIX_H_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="matrix_8h_source.html">matrix.h</a> の <a class="el" href="matrix_8h_source.html#l00024">24</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a5eca35a9b951c10885b220f134c11c02" name="a5eca35a9b951c10885b220f134c11c02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5eca35a9b951c10885b220f134c11c02">&#9670;&#160;</a></span>crsVecVec3D()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_v_e_c_t_o_r__3_d.html">VECTOR_3D</a> crsVecVec3D </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_v_e_c_t_o_r__3_d.html">VECTOR_3D</a>&#160;</td>
+          <td class="paramname"><em>VecA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_v_e_c_t_o_r__3_d.html">VECTOR_3D</a>&#160;</td>
+          <td class="paramname"><em>VecB</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="matrix_8cpp_source.html">matrix.cpp</a> の <a class="el" href="matrix_8cpp_source.html#l00114">114</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a72cc5cdc523bdcf139a578a5311ca33e" name="a72cc5cdc523bdcf139a578a5311ca33e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72cc5cdc523bdcf139a578a5311ca33e">&#9670;&#160;</a></span>inverseMat3D()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int inverseMat3D </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_m_a_t_r_i_x__3_d.html">MATRIX_3D</a>&#160;</td>
+          <td class="paramname"><em>MatA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_m_a_t_r_i_x__3_d.html">MATRIX_3D</a> *&#160;</td>
+          <td class="paramname"><em>InvA</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="matrix_8cpp_source.html">matrix.cpp</a> の <a class="el" href="matrix_8cpp_source.html#l00211">211</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a6ef486760e940d65fc7b9dbccf2ce521" name="a6ef486760e940d65fc7b9dbccf2ce521"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ef486760e940d65fc7b9dbccf2ce521">&#9670;&#160;</a></span>mulMatMat3D()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_m_a_t_r_i_x__3_d.html">MATRIX_3D</a> mulMatMat3D </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_m_a_t_r_i_x__3_d.html">MATRIX_3D</a>&#160;</td>
+          <td class="paramname"><em>MatA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_m_a_t_r_i_x__3_d.html">MATRIX_3D</a>&#160;</td>
+          <td class="paramname"><em>MatB</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="matrix_8cpp_source.html">matrix.cpp</a> の <a class="el" href="matrix_8cpp_source.html#l00031">31</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a6eece280369d2be06c7219ad733d5c00" name="a6eece280369d2be06c7219ad733d5c00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6eece280369d2be06c7219ad733d5c00">&#9670;&#160;</a></span>mulMatMat4D()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_m_a_t_r_i_x__4_d.html">MATRIX_4D</a> mulMatMat4D </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_m_a_t_r_i_x__4_d.html">MATRIX_4D</a>&#160;</td>
+          <td class="paramname"><em>MatA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_m_a_t_r_i_x__4_d.html">MATRIX_4D</a>&#160;</td>
+          <td class="paramname"><em>MatB</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="matrix_8cpp_source.html">matrix.cpp</a> の <a class="el" href="matrix_8cpp_source.html#l00237">237</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a2a14f4f464e3f5f9b9c5de7367be6ffb" name="a2a14f4f464e3f5f9b9c5de7367be6ffb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a14f4f464e3f5f9b9c5de7367be6ffb">&#9670;&#160;</a></span>mulMatVec3D()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_v_e_c_t_o_r__3_d.html">VECTOR_3D</a> mulMatVec3D </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_m_a_t_r_i_x__3_d.html">MATRIX_3D</a>&#160;</td>
+          <td class="paramname"><em>MatA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_v_e_c_t_o_r__3_d.html">VECTOR_3D</a>&#160;</td>
+          <td class="paramname"><em>VecA</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="matrix_8cpp_source.html">matrix.cpp</a> の <a class="el" href="matrix_8cpp_source.html#l00056">56</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a4b7c10093fb9b110858a961c7514f61b" name="a4b7c10093fb9b110858a961c7514f61b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b7c10093fb9b110858a961c7514f61b">&#9670;&#160;</a></span>mulMatVec4D()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_v_e_c_t_o_r__4_d.html">VECTOR_4D</a> mulMatVec4D </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_m_a_t_r_i_x__4_d.html">MATRIX_4D</a>&#160;</td>
+          <td class="paramname"><em>MatA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_v_e_c_t_o_r__4_d.html">VECTOR_4D</a>&#160;</td>
+          <td class="paramname"><em>VecA</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="matrix_8cpp_source.html">matrix.cpp</a> の <a class="el" href="matrix_8cpp_source.html#l00262">262</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a3bae79c629fe9495136bf13aafc8f556" name="a3bae79c629fe9495136bf13aafc8f556"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bae79c629fe9495136bf13aafc8f556">&#9670;&#160;</a></span>mulScoMat3D()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_m_a_t_r_i_x__3_d.html">MATRIX_3D</a> mulScoMat3D </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_m_a_t_r_i_x__3_d.html">MATRIX_3D</a>&#160;</td>
+          <td class="paramname"><em>MatA</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="matrix_8cpp_source.html">matrix.cpp</a> の <a class="el" href="matrix_8cpp_source.html#l00074">74</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aa6164d06833a652a0192335b779f68bf" name="aa6164d06833a652a0192335b779f68bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6164d06833a652a0192335b779f68bf">&#9670;&#160;</a></span>mulScoVec3D()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_v_e_c_t_o_r__3_d.html">VECTOR_3D</a> mulScoVec3D </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_v_e_c_t_o_r__3_d.html">VECTOR_3D</a>&#160;</td>
+          <td class="paramname"><em>VecA</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="matrix_8cpp_source.html">matrix.cpp</a> の <a class="el" href="matrix_8cpp_source.html#l00096">96</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae88af13648d90f8bd2a761a4d19725f3" name="ae88af13648d90f8bd2a761a4d19725f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae88af13648d90f8bd2a761a4d19725f3">&#9670;&#160;</a></span>subVecVec3D()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_v_e_c_t_o_r__3_d.html">VECTOR_3D</a> subVecVec3D </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_v_e_c_t_o_r__3_d.html">VECTOR_3D</a>&#160;</td>
+          <td class="paramname"><em>VecA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_v_e_c_t_o_r__3_d.html">VECTOR_3D</a>&#160;</td>
+          <td class="paramname"><em>VecB</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="matrix_8cpp_source.html">matrix.cpp</a> の <a class="el" href="matrix_8cpp_source.html#l00172">172</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aaaf3c99447ed3db82969795c85c0f503" name="aaaf3c99447ed3db82969795c85c0f503"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaaf3c99447ed3db82969795c85c0f503">&#9670;&#160;</a></span>sumMatMat3D()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_m_a_t_r_i_x__3_d.html">MATRIX_3D</a> sumMatMat3D </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_m_a_t_r_i_x__3_d.html">MATRIX_3D</a>&#160;</td>
+          <td class="paramname"><em>MatA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_m_a_t_r_i_x__3_d.html">MATRIX_3D</a>&#160;</td>
+          <td class="paramname"><em>MatB</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="matrix_8cpp_source.html">matrix.cpp</a> の <a class="el" href="matrix_8cpp_source.html#l00132">132</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aa73b952198cfead8f0f89325ef52659f" name="aa73b952198cfead8f0f89325ef52659f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa73b952198cfead8f0f89325ef52659f">&#9670;&#160;</a></span>sumVecVec3D()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_v_e_c_t_o_r__3_d.html">VECTOR_3D</a> sumVecVec3D </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_v_e_c_t_o_r__3_d.html">VECTOR_3D</a>&#160;</td>
+          <td class="paramname"><em>VecA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_v_e_c_t_o_r__3_d.html">VECTOR_3D</a>&#160;</td>
+          <td class="paramname"><em>VecB</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="matrix_8cpp_source.html">matrix.cpp</a> の <a class="el" href="matrix_8cpp_source.html#l00154">154</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a80de652e048ee4e62e224b3bcff98279" name="a80de652e048ee4e62e224b3bcff98279"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80de652e048ee4e62e224b3bcff98279">&#9670;&#160;</a></span>transeposeMat3D()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_m_a_t_r_i_x__3_d.html">MATRIX_3D</a> transeposeMat3D </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_m_a_t_r_i_x__3_d.html">MATRIX_3D</a>&#160;</td>
+          <td class="paramname"><em>MatA</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="matrix_8cpp_source.html">matrix.cpp</a> の <a class="el" href="matrix_8cpp_source.html#l00189">189</a> 行目に定義があります。</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+</small></address>
+</body>
+</html>

@@ -1,0 +1,25 @@
+\hypertarget{param_8hpp_source}{}\doxysection{param.\+hpp}
+\label{param_8hpp_source}\index{include/param.hpp@{include/param.hpp}}
+\mbox{\hyperlink{param_8hpp}{\mbox{[}詳解\mbox{]}}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{param_8hpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{param_8hpp_source_l00008}00008 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{param_8hpp_source_l00009}\mbox{\hyperlink{struct_j_o_i_n_t___r_a_n_g_e}{00009}} \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{\Hypertarget{param_8hpp_source_l00010}00010 \{}
+\DoxyCodeLine{\Hypertarget{param_8hpp_source_l00012}\mbox{\hyperlink{struct_j_o_i_n_t___r_a_n_g_e_ab429eb8e5329aaee5af24cd6f0936aea}{00012}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{struct_j_o_i_n_t___r_a_n_g_e_ab429eb8e5329aaee5af24cd6f0936aea}{min}};}
+\DoxyCodeLine{\Hypertarget{param_8hpp_source_l00014}\mbox{\hyperlink{struct_j_o_i_n_t___r_a_n_g_e_ab1c54c0391d5890788cd5708af2de689}{00014}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{struct_j_o_i_n_t___r_a_n_g_e_ab1c54c0391d5890788cd5708af2de689}{max}};}
+\DoxyCodeLine{\Hypertarget{param_8hpp_source_l00015}00015 \} \mbox{\hyperlink{struct_j_o_i_n_t___r_a_n_g_e}{JOINT\_RANGE}};}
+\DoxyCodeLine{\Hypertarget{param_8hpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{param_8hpp_source_l00017}00017 \textcolor{preprocessor}{\#ifndef JOINT\_NUM}}
+\DoxyCodeLine{\Hypertarget{param_8hpp_source_l00018}\mbox{\hyperlink{param_8hpp_a77a75ab2f04afeb199b0a5ad94c0d8c6}{00018}} \textcolor{preprocessor}{\#define JOINT\_NUM (3)}}
+\DoxyCodeLine{\Hypertarget{param_8hpp_source_l00019}00019 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{param_8hpp_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{param_8hpp_source_l00021}00021 \textcolor{keyword}{static} \textcolor{keyword}{const} \mbox{\hyperlink{struct_j_o_i_n_t___r_a_n_g_e}{JOINT\_RANGE}} joint\_range[\mbox{\hyperlink{param_8hpp_a77a75ab2f04afeb199b0a5ad94c0d8c6}{JOINT\_NUM}}] = \{}
+\DoxyCodeLine{\Hypertarget{param_8hpp_source_l00022}00022     \textcolor{comment}{/*  min [rad], max[rad]  */}}
+\DoxyCodeLine{\Hypertarget{param_8hpp_source_l00023}00023     \{-\/2.740, 2.740\}, \textcolor{comment}{// joint 1}}
+\DoxyCodeLine{\Hypertarget{param_8hpp_source_l00024}00024     \{0.000, 3.141\},  \textcolor{comment}{// joint 2}}
+\DoxyCodeLine{\Hypertarget{param_8hpp_source_l00025}00025     \{-\/2.740, 2.740\}, \textcolor{comment}{// joint 3}}
+\DoxyCodeLine{\Hypertarget{param_8hpp_source_l00026}00026 \};}
+\DoxyCodeLine{\Hypertarget{param_8hpp_source_l00027}00027 \textcolor{keywordtype}{void} \mbox{\hyperlink{param_8hpp_a52b1a2a7b69d4dc75b1388bcf50f89df}{getJointRange}}(\mbox{\hyperlink{struct_j_o_i_n_t___r_a_n_g_e}{JOINT\_RANGE}} *joint\_parameter);}
+
+\end{DoxyCode}

@@ -1,8 +1,17 @@
+/**
+ * @file param.h
+ * @brief 角度の制限範囲を指定
+ * @author 38ta2
+ * @date 14Des2022
+ * @details 角度を指定している
+ */
 #pragma once
 typedef struct
 {
-    double min; // minimum movable range
-    double max; // maximum movable range
+    //! minimum movable range
+    double min;
+    //! maximum movable range
+    double max;
 } JOINT_RANGE;
 
 #ifndef JOINT_NUM

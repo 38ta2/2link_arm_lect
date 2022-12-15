@@ -1,0 +1,153 @@
+\hypertarget{matrix_8cpp}{}\doxysection{src/matrix.cpp ファイル}
+\label{matrix_8cpp}\index{src/matrix.cpp@{src/matrix.cpp}}
+{\ttfamily \#include \char`\"{}matrix.\+h\char`\"{}}\newline
+\doxysubsection*{関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_m_a_t_r_i_x__3_d}{MATRIX\+\_\+3D}} \mbox{\hyperlink{matrix_8cpp_a5a119e8a9a95df26474c2e7d6e964bb8}{mul\+Mat\+Mat3D}} (\mbox{\hyperlink{struct_m_a_t_r_i_x__3_d}{MATRIX\+\_\+3D}} MatA, \mbox{\hyperlink{struct_m_a_t_r_i_x__3_d}{MATRIX\+\_\+3D}} MatB)
+\item 
+\mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\+\_\+3D}} \mbox{\hyperlink{matrix_8cpp_a306bb9723fb52582b8815a9d3ea73c36}{mul\+Mat\+Vec3D}} (\mbox{\hyperlink{struct_m_a_t_r_i_x__3_d}{MATRIX\+\_\+3D}} MatA, \mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\+\_\+3D}} VecA)
+\item 
+\mbox{\hyperlink{struct_m_a_t_r_i_x__3_d}{MATRIX\+\_\+3D}} \mbox{\hyperlink{matrix_8cpp_a70358f485bf17b2b6a3c714090b3f8c4}{mul\+Sco\+Mat3D}} (double c, \mbox{\hyperlink{struct_m_a_t_r_i_x__3_d}{MATRIX\+\_\+3D}} MatA)
+\item 
+\mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\+\_\+3D}} \mbox{\hyperlink{matrix_8cpp_aebf12c76bbddb7c3f8c7ee5ea3b37601}{mul\+Sco\+Vec3D}} (double c, \mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\+\_\+3D}} VecA)
+\item 
+\mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\+\_\+3D}} \mbox{\hyperlink{matrix_8cpp_a85a95254fe98cdc50bd9b9018d8543f4}{crs\+Vec\+Vec3D}} (\mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\+\_\+3D}} VecA, \mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\+\_\+3D}} VecB)
+\item 
+\mbox{\hyperlink{struct_m_a_t_r_i_x__3_d}{MATRIX\+\_\+3D}} \mbox{\hyperlink{matrix_8cpp_a49e03af02d0037f6df251a57b72f869b}{sum\+Mat\+Mat3D}} (\mbox{\hyperlink{struct_m_a_t_r_i_x__3_d}{MATRIX\+\_\+3D}} MatA, \mbox{\hyperlink{struct_m_a_t_r_i_x__3_d}{MATRIX\+\_\+3D}} MatB)
+\item 
+\mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\+\_\+3D}} \mbox{\hyperlink{matrix_8cpp_abfff19f5091677b5cf0ed06e1f9e89b1}{sum\+Vec\+Vec3D}} (\mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\+\_\+3D}} VecA, \mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\+\_\+3D}} VecB)
+\item 
+\mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\+\_\+3D}} \mbox{\hyperlink{matrix_8cpp_a74f1023efc2cfad82f7cbfdb0e613687}{sub\+Vec\+Vec3D}} (\mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\+\_\+3D}} VecA, \mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\+\_\+3D}} VecB)
+\item 
+\mbox{\hyperlink{struct_m_a_t_r_i_x__3_d}{MATRIX\+\_\+3D}} \mbox{\hyperlink{matrix_8cpp_a71e00cc43222d735d883745da7150033}{transepose\+Mat3D}} (\mbox{\hyperlink{struct_m_a_t_r_i_x__3_d}{MATRIX\+\_\+3D}} MatA)
+\item 
+int \mbox{\hyperlink{matrix_8cpp_a53e628421cf067ca22a9db5a40c5677f}{inverse\+Mat3D}} (\mbox{\hyperlink{struct_m_a_t_r_i_x__3_d}{MATRIX\+\_\+3D}} MatA, \mbox{\hyperlink{struct_m_a_t_r_i_x__3_d}{MATRIX\+\_\+3D}} $\ast$InvA)
+\item 
+\mbox{\hyperlink{struct_m_a_t_r_i_x__4_d}{MATRIX\+\_\+4D}} \mbox{\hyperlink{matrix_8cpp_ae11ec58313092cfd4a7f5330abeddb3a}{mul\+Mat\+Mat4D}} (\mbox{\hyperlink{struct_m_a_t_r_i_x__4_d}{MATRIX\+\_\+4D}} MatA, \mbox{\hyperlink{struct_m_a_t_r_i_x__4_d}{MATRIX\+\_\+4D}} MatB)
+\item 
+\mbox{\hyperlink{struct_v_e_c_t_o_r__4_d}{VECTOR\+\_\+4D}} \mbox{\hyperlink{matrix_8cpp_ad2102f53c3ea671f5d918284fc130173}{mul\+Mat\+Vec4D}} (\mbox{\hyperlink{struct_m_a_t_r_i_x__4_d}{MATRIX\+\_\+4D}} MatA, \mbox{\hyperlink{struct_v_e_c_t_o_r__4_d}{VECTOR\+\_\+4D}} VecA)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{関数詳解}
+\mbox{\Hypertarget{matrix_8cpp_a85a95254fe98cdc50bd9b9018d8543f4}\label{matrix_8cpp_a85a95254fe98cdc50bd9b9018d8543f4}} 
+\index{matrix.cpp@{matrix.cpp}!crsVecVec3D@{crsVecVec3D}}
+\index{crsVecVec3D@{crsVecVec3D}!matrix.cpp@{matrix.cpp}}
+\doxysubsubsection{\texorpdfstring{crsVecVec3D()}{crsVecVec3D()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\+\_\+3D}} crs\+Vec\+Vec3D (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\+\_\+3D}}}]{VecA,  }\item[{\mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\+\_\+3D}}}]{VecB }\end{DoxyParamCaption})}
+
+
+
+ \mbox{\hyperlink{matrix_8cpp_source}{matrix.\+cpp}} の \mbox{\hyperlink{matrix_8cpp_source_l00114}{114}} 行目に定義があります。
+
+\mbox{\Hypertarget{matrix_8cpp_a53e628421cf067ca22a9db5a40c5677f}\label{matrix_8cpp_a53e628421cf067ca22a9db5a40c5677f}} 
+\index{matrix.cpp@{matrix.cpp}!inverseMat3D@{inverseMat3D}}
+\index{inverseMat3D@{inverseMat3D}!matrix.cpp@{matrix.cpp}}
+\doxysubsubsection{\texorpdfstring{inverseMat3D()}{inverseMat3D()}}
+{\footnotesize\ttfamily int inverse\+Mat3D (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_m_a_t_r_i_x__3_d}{MATRIX\+\_\+3D}}}]{MatA,  }\item[{\mbox{\hyperlink{struct_m_a_t_r_i_x__3_d}{MATRIX\+\_\+3D}} $\ast$}]{InvA }\end{DoxyParamCaption})}
+
+
+
+ \mbox{\hyperlink{matrix_8cpp_source}{matrix.\+cpp}} の \mbox{\hyperlink{matrix_8cpp_source_l00211}{211}} 行目に定義があります。
+
+\mbox{\Hypertarget{matrix_8cpp_a5a119e8a9a95df26474c2e7d6e964bb8}\label{matrix_8cpp_a5a119e8a9a95df26474c2e7d6e964bb8}} 
+\index{matrix.cpp@{matrix.cpp}!mulMatMat3D@{mulMatMat3D}}
+\index{mulMatMat3D@{mulMatMat3D}!matrix.cpp@{matrix.cpp}}
+\doxysubsubsection{\texorpdfstring{mulMatMat3D()}{mulMatMat3D()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_m_a_t_r_i_x__3_d}{MATRIX\+\_\+3D}} mul\+Mat\+Mat3D (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_m_a_t_r_i_x__3_d}{MATRIX\+\_\+3D}}}]{MatA,  }\item[{\mbox{\hyperlink{struct_m_a_t_r_i_x__3_d}{MATRIX\+\_\+3D}}}]{MatB }\end{DoxyParamCaption})}
+
+
+
+ \mbox{\hyperlink{matrix_8cpp_source}{matrix.\+cpp}} の \mbox{\hyperlink{matrix_8cpp_source_l00031}{31}} 行目に定義があります。
+
+\mbox{\Hypertarget{matrix_8cpp_ae11ec58313092cfd4a7f5330abeddb3a}\label{matrix_8cpp_ae11ec58313092cfd4a7f5330abeddb3a}} 
+\index{matrix.cpp@{matrix.cpp}!mulMatMat4D@{mulMatMat4D}}
+\index{mulMatMat4D@{mulMatMat4D}!matrix.cpp@{matrix.cpp}}
+\doxysubsubsection{\texorpdfstring{mulMatMat4D()}{mulMatMat4D()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_m_a_t_r_i_x__4_d}{MATRIX\+\_\+4D}} mul\+Mat\+Mat4D (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_m_a_t_r_i_x__4_d}{MATRIX\+\_\+4D}}}]{MatA,  }\item[{\mbox{\hyperlink{struct_m_a_t_r_i_x__4_d}{MATRIX\+\_\+4D}}}]{MatB }\end{DoxyParamCaption})}
+
+
+
+ \mbox{\hyperlink{matrix_8cpp_source}{matrix.\+cpp}} の \mbox{\hyperlink{matrix_8cpp_source_l00237}{237}} 行目に定義があります。
+
+\mbox{\Hypertarget{matrix_8cpp_a306bb9723fb52582b8815a9d3ea73c36}\label{matrix_8cpp_a306bb9723fb52582b8815a9d3ea73c36}} 
+\index{matrix.cpp@{matrix.cpp}!mulMatVec3D@{mulMatVec3D}}
+\index{mulMatVec3D@{mulMatVec3D}!matrix.cpp@{matrix.cpp}}
+\doxysubsubsection{\texorpdfstring{mulMatVec3D()}{mulMatVec3D()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\+\_\+3D}} mul\+Mat\+Vec3D (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_m_a_t_r_i_x__3_d}{MATRIX\+\_\+3D}}}]{MatA,  }\item[{\mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\+\_\+3D}}}]{VecA }\end{DoxyParamCaption})}
+
+
+
+ \mbox{\hyperlink{matrix_8cpp_source}{matrix.\+cpp}} の \mbox{\hyperlink{matrix_8cpp_source_l00056}{56}} 行目に定義があります。
+
+\mbox{\Hypertarget{matrix_8cpp_ad2102f53c3ea671f5d918284fc130173}\label{matrix_8cpp_ad2102f53c3ea671f5d918284fc130173}} 
+\index{matrix.cpp@{matrix.cpp}!mulMatVec4D@{mulMatVec4D}}
+\index{mulMatVec4D@{mulMatVec4D}!matrix.cpp@{matrix.cpp}}
+\doxysubsubsection{\texorpdfstring{mulMatVec4D()}{mulMatVec4D()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_v_e_c_t_o_r__4_d}{VECTOR\+\_\+4D}} mul\+Mat\+Vec4D (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_m_a_t_r_i_x__4_d}{MATRIX\+\_\+4D}}}]{MatA,  }\item[{\mbox{\hyperlink{struct_v_e_c_t_o_r__4_d}{VECTOR\+\_\+4D}}}]{VecA }\end{DoxyParamCaption})}
+
+
+
+ \mbox{\hyperlink{matrix_8cpp_source}{matrix.\+cpp}} の \mbox{\hyperlink{matrix_8cpp_source_l00262}{262}} 行目に定義があります。
+
+\mbox{\Hypertarget{matrix_8cpp_a70358f485bf17b2b6a3c714090b3f8c4}\label{matrix_8cpp_a70358f485bf17b2b6a3c714090b3f8c4}} 
+\index{matrix.cpp@{matrix.cpp}!mulScoMat3D@{mulScoMat3D}}
+\index{mulScoMat3D@{mulScoMat3D}!matrix.cpp@{matrix.cpp}}
+\doxysubsubsection{\texorpdfstring{mulScoMat3D()}{mulScoMat3D()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_m_a_t_r_i_x__3_d}{MATRIX\+\_\+3D}} mul\+Sco\+Mat3D (\begin{DoxyParamCaption}\item[{double}]{c,  }\item[{\mbox{\hyperlink{struct_m_a_t_r_i_x__3_d}{MATRIX\+\_\+3D}}}]{MatA }\end{DoxyParamCaption})}
+
+
+
+ \mbox{\hyperlink{matrix_8cpp_source}{matrix.\+cpp}} の \mbox{\hyperlink{matrix_8cpp_source_l00074}{74}} 行目に定義があります。
+
+\mbox{\Hypertarget{matrix_8cpp_aebf12c76bbddb7c3f8c7ee5ea3b37601}\label{matrix_8cpp_aebf12c76bbddb7c3f8c7ee5ea3b37601}} 
+\index{matrix.cpp@{matrix.cpp}!mulScoVec3D@{mulScoVec3D}}
+\index{mulScoVec3D@{mulScoVec3D}!matrix.cpp@{matrix.cpp}}
+\doxysubsubsection{\texorpdfstring{mulScoVec3D()}{mulScoVec3D()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\+\_\+3D}} mul\+Sco\+Vec3D (\begin{DoxyParamCaption}\item[{double}]{c,  }\item[{\mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\+\_\+3D}}}]{VecA }\end{DoxyParamCaption})}
+
+
+
+ \mbox{\hyperlink{matrix_8cpp_source}{matrix.\+cpp}} の \mbox{\hyperlink{matrix_8cpp_source_l00096}{96}} 行目に定義があります。
+
+\mbox{\Hypertarget{matrix_8cpp_a74f1023efc2cfad82f7cbfdb0e613687}\label{matrix_8cpp_a74f1023efc2cfad82f7cbfdb0e613687}} 
+\index{matrix.cpp@{matrix.cpp}!subVecVec3D@{subVecVec3D}}
+\index{subVecVec3D@{subVecVec3D}!matrix.cpp@{matrix.cpp}}
+\doxysubsubsection{\texorpdfstring{subVecVec3D()}{subVecVec3D()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\+\_\+3D}} sub\+Vec\+Vec3D (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\+\_\+3D}}}]{VecA,  }\item[{\mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\+\_\+3D}}}]{VecB }\end{DoxyParamCaption})}
+
+
+
+ \mbox{\hyperlink{matrix_8cpp_source}{matrix.\+cpp}} の \mbox{\hyperlink{matrix_8cpp_source_l00172}{172}} 行目に定義があります。
+
+\mbox{\Hypertarget{matrix_8cpp_a49e03af02d0037f6df251a57b72f869b}\label{matrix_8cpp_a49e03af02d0037f6df251a57b72f869b}} 
+\index{matrix.cpp@{matrix.cpp}!sumMatMat3D@{sumMatMat3D}}
+\index{sumMatMat3D@{sumMatMat3D}!matrix.cpp@{matrix.cpp}}
+\doxysubsubsection{\texorpdfstring{sumMatMat3D()}{sumMatMat3D()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_m_a_t_r_i_x__3_d}{MATRIX\+\_\+3D}} sum\+Mat\+Mat3D (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_m_a_t_r_i_x__3_d}{MATRIX\+\_\+3D}}}]{MatA,  }\item[{\mbox{\hyperlink{struct_m_a_t_r_i_x__3_d}{MATRIX\+\_\+3D}}}]{MatB }\end{DoxyParamCaption})}
+
+
+
+ \mbox{\hyperlink{matrix_8cpp_source}{matrix.\+cpp}} の \mbox{\hyperlink{matrix_8cpp_source_l00132}{132}} 行目に定義があります。
+
+\mbox{\Hypertarget{matrix_8cpp_abfff19f5091677b5cf0ed06e1f9e89b1}\label{matrix_8cpp_abfff19f5091677b5cf0ed06e1f9e89b1}} 
+\index{matrix.cpp@{matrix.cpp}!sumVecVec3D@{sumVecVec3D}}
+\index{sumVecVec3D@{sumVecVec3D}!matrix.cpp@{matrix.cpp}}
+\doxysubsubsection{\texorpdfstring{sumVecVec3D()}{sumVecVec3D()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\+\_\+3D}} sum\+Vec\+Vec3D (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\+\_\+3D}}}]{VecA,  }\item[{\mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\+\_\+3D}}}]{VecB }\end{DoxyParamCaption})}
+
+
+
+ \mbox{\hyperlink{matrix_8cpp_source}{matrix.\+cpp}} の \mbox{\hyperlink{matrix_8cpp_source_l00154}{154}} 行目に定義があります。
+
+\mbox{\Hypertarget{matrix_8cpp_a71e00cc43222d735d883745da7150033}\label{matrix_8cpp_a71e00cc43222d735d883745da7150033}} 
+\index{matrix.cpp@{matrix.cpp}!transeposeMat3D@{transeposeMat3D}}
+\index{transeposeMat3D@{transeposeMat3D}!matrix.cpp@{matrix.cpp}}
+\doxysubsubsection{\texorpdfstring{transeposeMat3D()}{transeposeMat3D()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_m_a_t_r_i_x__3_d}{MATRIX\+\_\+3D}} transepose\+Mat3D (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_m_a_t_r_i_x__3_d}{MATRIX\+\_\+3D}}}]{MatA }\end{DoxyParamCaption})}
+
+
+
+ \mbox{\hyperlink{matrix_8cpp_source}{matrix.\+cpp}} の \mbox{\hyperlink{matrix_8cpp_source_l00189}{189}} 行目に定義があります。
+

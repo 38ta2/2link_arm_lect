@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.5"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>2リンクアームで制御を学ぶ: src/calculate.cpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">2リンクアームで制御を学ぶ
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.5 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">calculate.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="calculate_8cpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;math.h&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="calculate_8hpp.html">calculate.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="param_8hpp.html">param.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="calculate_8hpp.html#a308d266399786c30de6e92182253f953">   20</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="calculate_8cpp.html#a308d266399786c30de6e92182253f953">forwardKinematics2Dof</a>(<a class="code hl_struct" href="struct_v_e_c_t_o_r__3_d.html">VECTOR_3D</a> *p, <span class="keywordtype">double</span> *theta)</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>{</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordtype">double</span> L1 = 0.080;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordtype">double</span> L2 = 0.055;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordtype">double</span> C1 = cos(theta[1]);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordtype">double</span> C12 = cos(theta[1] + theta[3]);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">double</span> S1 = sin(theta[1]);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">double</span> S12 = sin(theta[1] + theta[3]);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    p-&gt;<a class="code hl_variable" href="struct_v_e_c_t_o_r__3_d.html#a796e9ae397dc8750389cc2ae302d14d2">x</a> = L1 * C1 + L2 * C12;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    p-&gt;<a class="code hl_variable" href="struct_v_e_c_t_o_r__3_d.html#acb074dd4bde061f83a3bae05e2b2923f">y</a> = L1 * S1 + L2 * S12;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>}</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="calculate_8hpp.html#ad0d45e8f4fa4b1d39f1e4f748b873473">   49</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="calculate_8cpp.html#ad0d45e8f4fa4b1d39f1e4f748b873473">inverseKinematics2Dof</a>(<a class="code hl_struct" href="struct_v_e_c_t_o_r__3_d.html">VECTOR_3D</a> p, <span class="keywordtype">double</span> *theta)</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>{</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordtype">double</span> L1 = 0.080;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordtype">double</span> L2 = 0.055;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordtype">double</span> S2, C2;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="comment">// ！ 手先位置の値が可動範囲の外であればエラー値を返す</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordflow">if</span> (((pow(L1 - L2, 2)) &gt; (p.<a class="code hl_variable" href="struct_v_e_c_t_o_r__3_d.html#a796e9ae397dc8750389cc2ae302d14d2">x</a> * p.<a class="code hl_variable" href="struct_v_e_c_t_o_r__3_d.html#a796e9ae397dc8750389cc2ae302d14d2">x</a> + p.<a class="code hl_variable" href="struct_v_e_c_t_o_r__3_d.html#acb074dd4bde061f83a3bae05e2b2923f">y</a> * p.<a class="code hl_variable" href="struct_v_e_c_t_o_r__3_d.html#acb074dd4bde061f83a3bae05e2b2923f">y</a>)) || ((p.<a class="code hl_variable" href="struct_v_e_c_t_o_r__3_d.html#a796e9ae397dc8750389cc2ae302d14d2">x</a> * p.<a class="code hl_variable" href="struct_v_e_c_t_o_r__3_d.html#a796e9ae397dc8750389cc2ae302d14d2">x</a> + p.<a class="code hl_variable" href="struct_v_e_c_t_o_r__3_d.html#acb074dd4bde061f83a3bae05e2b2923f">y</a> * p.<a class="code hl_variable" href="struct_v_e_c_t_o_r__3_d.html#acb074dd4bde061f83a3bae05e2b2923f">y</a>) &gt; (pow(L1 + L2, 2))))</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        printf(<span class="stringliteral">&quot;Target position is out of range.\n&quot;</span>);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    }</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 3; i++)</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        theta[i] = 0;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    }</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    C2 = (p.<a class="code hl_variable" href="struct_v_e_c_t_o_r__3_d.html#a796e9ae397dc8750389cc2ae302d14d2">x</a> * p.<a class="code hl_variable" href="struct_v_e_c_t_o_r__3_d.html#a796e9ae397dc8750389cc2ae302d14d2">x</a> + p.<a class="code hl_variable" href="struct_v_e_c_t_o_r__3_d.html#acb074dd4bde061f83a3bae05e2b2923f">y</a> * p.<a class="code hl_variable" href="struct_v_e_c_t_o_r__3_d.html#acb074dd4bde061f83a3bae05e2b2923f">y</a> - L1 * L1 - L2 * L2) / (2 * L1 * L2);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="comment">// !acosの戻り値[0:π]、CRANE-X7においてθ2の可動はマイナス方向のみ</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    theta[3] = -acos(C2);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="comment">// ！ θ1の角度</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    S2 = sin(theta[3]);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    theta[1] = atan2((-L2 * S2 * p.<a class="code hl_variable" href="struct_v_e_c_t_o_r__3_d.html#a796e9ae397dc8750389cc2ae302d14d2">x</a> + (L1 + L2 * C2) * p.<a class="code hl_variable" href="struct_v_e_c_t_o_r__3_d.html#acb074dd4bde061f83a3bae05e2b2923f">y</a>), ((L1 + L2 * C2) * p.<a class="code hl_variable" href="struct_v_e_c_t_o_r__3_d.html#a796e9ae397dc8750389cc2ae302d14d2">x</a> + L2 * S2 * p.<a class="code hl_variable" href="struct_v_e_c_t_o_r__3_d.html#acb074dd4bde061f83a3bae05e2b2923f">y</a>));</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="comment">// ！ 得られた関節角度が可動範囲外であればエラーを返す</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 3; i++)</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        <span class="keywordtype">int</span> r = i - 1;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        <span class="comment">// printf(&quot;%d is i_limit&quot;, i);</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <span class="keywordflow">if</span> (((joint_range[i].min) &gt; (theta[r])) || ((theta[r]) &gt; (joint_range[i].max)))</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        {</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            printf(<span class="stringliteral">&quot;Theta %d is out of range. \n&quot;</span>, i);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        }</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    }</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>}</div>
+<div class="ttc" id="acalculate_8cpp_html_a308d266399786c30de6e92182253f953"><div class="ttname"><a href="calculate_8cpp.html#a308d266399786c30de6e92182253f953">forwardKinematics2Dof</a></div><div class="ttdeci">int forwardKinematics2Dof(VECTOR_3D *p, double *theta)</div><div class="ttdef"><b>Definition:</b> <a href="calculate_8cpp_source.html#l00020">calculate.cpp:20</a></div></div>
+<div class="ttc" id="acalculate_8cpp_html_ad0d45e8f4fa4b1d39f1e4f748b873473"><div class="ttname"><a href="calculate_8cpp.html#ad0d45e8f4fa4b1d39f1e4f748b873473">inverseKinematics2Dof</a></div><div class="ttdeci">int inverseKinematics2Dof(VECTOR_3D p, double *theta)</div><div class="ttdef"><b>Definition:</b> <a href="calculate_8cpp_source.html#l00049">calculate.cpp:49</a></div></div>
+<div class="ttc" id="acalculate_8hpp_html"><div class="ttname"><a href="calculate_8hpp.html">calculate.hpp</a></div></div>
+<div class="ttc" id="aparam_8hpp_html"><div class="ttname"><a href="param_8hpp.html">param.hpp</a></div></div>
+<div class="ttc" id="astruct_v_e_c_t_o_r__3_d_html"><div class="ttname"><a href="struct_v_e_c_t_o_r__3_d.html">VECTOR_3D</a></div><div class="ttdoc">3 dimentional vector</div><div class="ttdef"><b>Definition:</b> <a href="matrix_8h_source.html#l00031">matrix.h:32</a></div></div>
+<div class="ttc" id="astruct_v_e_c_t_o_r__3_d_html_a796e9ae397dc8750389cc2ae302d14d2"><div class="ttname"><a href="struct_v_e_c_t_o_r__3_d.html#a796e9ae397dc8750389cc2ae302d14d2">VECTOR_3D::x</a></div><div class="ttdeci">double x</div><div class="ttdef"><b>Definition:</b> <a href="matrix_8h_source.html#l00033">matrix.h:33</a></div></div>
+<div class="ttc" id="astruct_v_e_c_t_o_r__3_d_html_acb074dd4bde061f83a3bae05e2b2923f"><div class="ttname"><a href="struct_v_e_c_t_o_r__3_d.html#acb074dd4bde061f83a3bae05e2b2923f">VECTOR_3D::y</a></div><div class="ttdeci">double y</div><div class="ttdef"><b>Definition:</b> <a href="matrix_8h_source.html#l00034">matrix.h:34</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+</small></address>
+</body>
+</html>

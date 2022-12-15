@@ -1,0 +1,42 @@
+\hypertarget{calculate_8cpp}{}\doxysection{src/calculate.cpp ファイル}
+\label{calculate_8cpp}\index{src/calculate.cpp@{src/calculate.cpp}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}calculate.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}param.\+hpp\char`\"{}}\newline
+\doxysubsection*{関数}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{calculate_8cpp_a308d266399786c30de6e92182253f953}{forward\+Kinematics2\+Dof}} (\mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\+\_\+3D}} $\ast$p, double $\ast$theta)
+\item 
+int \mbox{\hyperlink{calculate_8cpp_ad0d45e8f4fa4b1d39f1e4f748b873473}{inverse\+Kinematics2\+Dof}} (\mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\+\_\+3D}} p, double $\ast$theta)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{関数詳解}
+\mbox{\Hypertarget{calculate_8cpp_a308d266399786c30de6e92182253f953}\label{calculate_8cpp_a308d266399786c30de6e92182253f953}} 
+\index{calculate.cpp@{calculate.cpp}!forwardKinematics2Dof@{forwardKinematics2Dof}}
+\index{forwardKinematics2Dof@{forwardKinematics2Dof}!calculate.cpp@{calculate.cpp}}
+\doxysubsubsection{\texorpdfstring{forwardKinematics2Dof()}{forwardKinematics2Dof()}}
+{\footnotesize\ttfamily int forward\+Kinematics2\+Dof (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\+\_\+3D}} $\ast$}]{p,  }\item[{double $\ast$}]{theta }\end{DoxyParamCaption})}
+
+制作したリンクの長さ
+
+三角関数の定義
+
+座標の計算法
+
+ \mbox{\hyperlink{calculate_8cpp_source}{calculate.\+cpp}} の \mbox{\hyperlink{calculate_8cpp_source_l00020}{20}} 行目に定義があります。
+
+\mbox{\Hypertarget{calculate_8cpp_ad0d45e8f4fa4b1d39f1e4f748b873473}\label{calculate_8cpp_ad0d45e8f4fa4b1d39f1e4f748b873473}} 
+\index{calculate.cpp@{calculate.cpp}!inverseKinematics2Dof@{inverseKinematics2Dof}}
+\index{inverseKinematics2Dof@{inverseKinematics2Dof}!calculate.cpp@{calculate.cpp}}
+\doxysubsubsection{\texorpdfstring{inverseKinematics2Dof()}{inverseKinematics2Dof()}}
+{\footnotesize\ttfamily int inverse\+Kinematics2\+Dof (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_v_e_c_t_o_r__3_d}{VECTOR\+\_\+3D}}}]{p,  }\item[{double $\ast$}]{theta }\end{DoxyParamCaption})}
+
+2軸目theta\mbox{[}1\mbox{]}と4軸目theta\mbox{[}3\mbox{]}以外は0 radで固定
+
+θ2の角度
+
+ \mbox{\hyperlink{calculate_8cpp_source}{calculate.\+cpp}} の \mbox{\hyperlink{calculate_8cpp_source_l00049}{49}} 行目に定義があります。
+
